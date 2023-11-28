@@ -6,22 +6,24 @@ function Pedidos() {
       <Header />
       <main>
         <section>
-          <h2>Categorias</h2>
-          <span>Navegue por categoria</span>
+          <h2 className="text-2xl font-bold">Categorias</h2>
+          <span className="text-lg">Navegue por categoria</span>
           <ul className="flex flex-row">
-            <li>Combos</li>
-            <li>acompanhamentos</li>
-            <li>Bebidas</li>
-            <li>Sobremesas</li>
+            <li className="text-xl">Combos</li>
+            <li className="text-xl">acompanhamentos</li>
+            <li className="text-xl">Bebidas</li>
+            <li className="text-xl">Sobremesas</li>
           </ul>
         </section>
         <section>
-          <h2>Produtos</h2>
-          <span>Selecione um produto para adicionar ao seu pedido</span>
+          <h2 className="text-2xl font-bold">Produtos</h2>
+          <span className="text-lg">
+            Selecione um produto para adicionar ao seu pedido
+          </span>
         </section>
         <footer className="flex flex-row">
-          <button>Cancelar</button>
-          <button>Finalizar pedido</button>
+          <button className="text-2xl">Cancelar</button>
+          <button className="text-2xl">Finalizar pedido</button>
         </footer>
       </main>
     </>
