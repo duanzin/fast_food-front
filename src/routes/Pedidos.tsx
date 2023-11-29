@@ -1,18 +1,34 @@
 import Header from "../components/Header";
+import acomImg from "../images/acompanhamento.png";
+import bebidaImg from "../images/bebidas.png";
+import comboImg from "../images/combos.png";
+import sobreImg from "../images/sobremesa.png";
 
 function Pedidos() {
   return (
     <>
       <Header />
-      <main>
+      <main className="w-5/6 m-auto">
         <section>
           <h2 className="text-2xl font-bold">Categorias</h2>
           <span className="text-lg">Navegue por categoria</span>
-          <ul className="flex flex-row">
-            <li className="text-xl">Combos</li>
-            <li className="text-xl">acompanhamentos</li>
-            <li className="text-xl">Bebidas</li>
-            <li className="text-xl">Sobremesas</li>
+          <ul className="flex flex-row justify-between mt-4">
+            <li className="flex flex-col items-center w-56 h-fit py-5 bg-white rounded-lg shadow-lg">
+              <img src={comboImg} className="w-36 h-36" />
+              <strong className="text-xl">Combos</strong>
+            </li>
+            <li className="flex flex-col items-center w-56 h-fit py-5 bg-white rounded-lg shadow-lg">
+              <img src={acomImg} className="w-36 h-36" />
+              <strong className="text-xl">Acompanhamentos</strong>
+            </li>
+            <li className="flex flex-col items-center w-56 h-fit py-5 bg-white rounded-lg shadow-lg">
+              <img src={bebidaImg} className="w-36 h-36" />
+              <strong className="text-xl">Bebidas</strong>
+            </li>
+            <li className="flex flex-col items-center w-56 h-fit py-5 bg-white rounded-lg shadow-lg">
+              <img src={sobreImg} className="w-36 h-36" />
+              <strong className="text-xl">Sobremesas</strong>
+            </li>
           </ul>
         </section>
         <section>
