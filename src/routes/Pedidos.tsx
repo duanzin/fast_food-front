@@ -1,8 +1,8 @@
 import Header from "../components/Header";
-import acomImg from "../images/acompanhamento.png";
-import bebidaImg from "../images/bebidas.png";
-import comboImg from "../images/combos.png";
-import sobreImg from "../images/sobremesa.png";
+import acomImg from "../images/categorias/acompanhamento.png";
+import bebidaImg from "../images/categorias/bebidas.png";
+import comboImg from "../images/categorias/combos.png";
+import sobreImg from "../images/categorias/sobremesa.png";
 
 function Pedidos() {
   return (
