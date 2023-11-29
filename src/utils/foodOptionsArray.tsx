@@ -18,7 +18,7 @@ import { FoodOption } from "./types";
 
 const foodOptions: FoodOption[] = [
   {
-    category: "combos",
+    category: "Combos",
     options: [
       {
         name: "Burgão da casa",
@@ -47,7 +47,7 @@ const foodOptions: FoodOption[] = [
     ],
   },
   {
-    category: "acompanhamentos",
+    category: "Acompanhamentos",
     options: [
       {
         name: "Frango frito",
@@ -76,7 +76,7 @@ const foodOptions: FoodOption[] = [
     ],
   },
   {
-    category: "bebidas",
+    category: "Bebidas",
     options: [
       {
         name: "Coca-cola",
@@ -105,7 +105,7 @@ const foodOptions: FoodOption[] = [
     ],
   },
   {
-    category: "sobremesas",
+    category: "Sobremesas",
     options: [
       {
         name: "Banana split",
