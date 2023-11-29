@@ -14,16 +14,7 @@ import bananaImg from "../images/sobremesas/banana.png";
 import icecreamImg from "../images/sobremesas/icecream.png";
 import shakeImg from "../images/sobremesas/milkshake.png";
 import sundaeImg from "../images/sobremesas/sundae.png";
-
-type FoodOption = {
-  category: string;
-  options: {
-    name: string;
-    image: string;
-    price: number;
-    description: string;
-  }[];
-};
+import { FoodOption } from "./types";
 
 const foodOptions: FoodOption[] = [
   {
