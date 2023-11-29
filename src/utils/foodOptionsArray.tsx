@@ -15,118 +15,128 @@ import icecreamImg from "../images/sobremesas/icecream.png";
 import shakeImg from "../images/sobremesas/milkshake.png";
 import sundaeImg from "../images/sobremesas/sundae.png";
 
-const foodOptions = [
+type FoodOption = {
+  category: string;
+  options: {
+    name: string;
+    image: string;
+    price: number;
+    description: string;
+  }[];
+};
+
+const foodOptions: FoodOption[] = [
   {
-    row: "combos",
+    category: "combos",
     options: [
       {
         name: "Burgão da casa",
-        image: { basicImg },
+        image: basicImg,
         price: 19.9,
         description: "Hamburger grelhado com queijo e bacon",
       },
       {
         name: "Frango crocante",
-        image: { chickenImg },
+        image: chickenImg,
         price: 22.9,
         description: "Hamburger de frango",
       },
       {
         name: "Torre de carne",
-        image: { tripleImg },
+        image: tripleImg,
         price: 31.9,
         description: "Hamburger com tres carnes",
       },
       {
         name: "Queijo extra",
-        image: { cheeseImg },
+        image: cheeseImg,
         price: 24.9,
         description: "Hamburger com queijo extra",
       },
     ],
   },
   {
-    row: "acompanhamentos",
+    category: "acompanhamentos",
     options: [
       {
         name: "Frango frito",
-        image: { friedImg },
+        image: friedImg,
         price: 19.9,
         description: "Prato de frango frito",
       },
       {
         name: "Batata frita",
-        image: { friesImg },
+        image: friesImg,
         price: 8.99,
         description: "Porção de batata frita",
       },
       {
         name: "Nuggets",
-        image: { nuggetImg },
+        image: nuggetImg,
         price: 14.0,
         description: "Pacote com 10 nuggets",
       },
       {
         name: "Aneis de cebola",
-        image: { onionImg },
+        image: onionImg,
         price: 10.9,
         description: "Porção de aneis de cebola frita",
       },
     ],
   },
   {
-    row: "bebidas",
+    category: "bebidas",
     options: [
       {
         name: "Coca-cola",
-        image: { cokeImg },
+        image: cokeImg,
         price: 3.99,
         description: "Copo de coca cola",
       },
       {
         name: "Fanta laranja",
-        image: { fantaImg },
+        image: fantaImg,
         price: 3.99,
         description: "Copo de fanta laranja",
       },
       {
         name: "Chá gelado",
-        image: { teaImg },
+        image: teaImg,
         price: 3.99,
         description: "Copo de chá gelado",
       },
       {
         name: "Suco de laranja",
-        image: { juiceImg },
+        image: juiceImg,
         price: 3.99,
         description: "Copo de suco de laranja",
       },
     ],
   },
   {
-    row: "sobremesas",
+    category: "sobremesas",
     options: [
       {
         name: "Banana split",
-        image: { bananaImg },
+        image: bananaImg,
         price: 7.0,
         description: "Banana com sorvete, chantily e calda de chocolate",
       },
       {
         name: "Sorvete de casquinha",
-        image: { icecreamImg },
+        image: icecreamImg,
         price: 6.9,
         description: "Casquinha com 4 sabores de sorvete",
       },
       {
         name: "Milkshake",
-        image: { shakeImg },
+        image: shakeImg,
         price: 6.0,
         description: "Milkshake de chocolate",
       },
       {
         name: "Sundae",
-        image: { sundaeImg },
+        image: sundaeImg,
         price: 8.0,
         description: "Sundae de chocolate",
       },

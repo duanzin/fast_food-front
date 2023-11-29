@@ -1,4 +1,4 @@
-import foodOptions from "./foodOptionsArray";
+import foodOptions from "../utils/foodOptionsArray";
 
 function Produtos() {
   return <></>;

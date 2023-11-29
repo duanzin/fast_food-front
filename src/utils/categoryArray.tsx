@@ -3,23 +3,28 @@ import bebidaImg from "../images/categorias/bebidas.png";
 import comboImg from "../images/categorias/combos.png";
 import sobreImg from "../images/categorias/sobremesa.png";
 
-const categories = [
+type categoryArrayType = {
+    category: string;
+    image: string;
+  };
+
+const categoryArray: categoryArrayType[] = [
   {
     category: "Combos",
-    image: { comboImg },
+    image: comboImg,
   },
   {
     category: "Acompanhamentos",
-    image: { acomImg },
+    image: acomImg,
   },
   {
     category: "Bebidas",
-    image: { bebidaImg },
+    image: bebidaImg,
   },
   {
     category: "Sobremesas",
-    image: { sobreImg },
+    image: sobreImg,
   },
 ];
 
-export default categories;
+export default categoryArray;
