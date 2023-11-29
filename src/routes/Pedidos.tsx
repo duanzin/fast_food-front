@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Categorias from "../components/Categorias";
+import Produtos from "../components/Produtos";
 
 function Pedidos() {
   return (
@@ -16,6 +17,7 @@ function Pedidos() {
           <span className="text-lg">
             Selecione um produto para adicionar ao seu pedido
           </span>
+          <Produtos />
         </section>
         <footer className="flex flex-row">
           <button className="text-2xl">Cancelar</button>
