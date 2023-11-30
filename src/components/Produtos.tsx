@@ -1,7 +1,7 @@
 import foodOptions from "../utils/foodOptionsArray";
 import { FoodOption } from "../utils/types";
 
-function Produtos() {
+function Produtos({ foundItemId }: { foundItemId: string | null }) {
   return (
     <div className="flex flex-col gap-20">
       {foodOptions.map((item: FoodOption, index: number) => (
@@ -13,7 +13,10 @@ function Produtos() {
           {item.options.map((childItem, childIndex: number) => (
             <li
               key={childIndex}
-              className="flex flex-col justify-center items-center w-60 h-72 px-3 bg-white rounded-lg shadow-lg cursor-pointer"
+              id={childItem.name}
+              className={`flex flex-col justify-center items-center w-60 h-72 px-3 bg-white rounded-lg shadow-lg cursor-pointer ${
+                foundItemId === childItem.name ? "animate-ping" : ""
+              }`}
             >
               <img
                 src={childItem.image}
