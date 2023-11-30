@@ -4,7 +4,7 @@ function Cozinha() {
   return (
     <>
       <Header />
-      <main>cozinha</main>
+      <main className="w-5/6 m-auto mb-20">cozinha</main>
     </>
   );
 }

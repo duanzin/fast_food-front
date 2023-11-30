@@ -3,7 +3,7 @@ import { FoodOption } from "../utils/types";
 
 function Produtos() {
   return (
-    <>
+    <div className="flex flex-col gap-20">
       {foodOptions.map((item: FoodOption, index: number) => (
         <ul
           key={index}
@@ -13,7 +13,7 @@ function Produtos() {
           {item.options.map((childItem, childIndex: number) => (
             <li
               key={childIndex}
-              className="flex flex-col items-center cursor-pointer"
+              className="flex flex-col justify-center items-center w-60 h-72 px-3 bg-white rounded-lg shadow-lg cursor-pointer"
             >
               <img
                 src={childItem.image}
@@ -21,13 +21,15 @@ function Produtos() {
                 className="w-36 h-36"
               />
               <strong className="text-lg">{childItem.name}</strong>
-              <span>{childItem.description}</span>
-              <strong className="text-lg">{childItem.price}</strong>
+              <span className="text-center">{childItem.description}</span>
+              <strong className="text-lg">
+                R${childItem.price.toFixed(2).replace(".", ",")}
+              </strong>
             </li>
           ))}
         </ul>
       ))}
-    </>
+    </div>
   );
 }
 

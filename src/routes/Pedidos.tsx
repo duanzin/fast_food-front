@@ -6,7 +6,7 @@ function Pedidos() {
   return (
     <>
       <Header />
-      <main className="w-5/6 m-auto">
+      <main className="w-5/6 m-auto mb-20">
         <section>
           <h2 className="text-2xl font-bold">Categorias</h2>
           <span className="text-lg">Navegue por categoria</span>

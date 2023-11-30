@@ -4,7 +4,7 @@ function Retirada() {
   return (
     <>
       <Header />
-      <main>retirada</main>
+      <main className="w-5/6 m-auto mb-20">retirada</main>
     </>
   );
 }
