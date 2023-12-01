@@ -28,6 +28,12 @@ function Pedidos() {
     }
     setTotalAmount(totalAmount + product.price);
   };
+
+  const handleCancel = () => {
+    setSelectedProducts([]);
+    setTotalAmount(0);
+  };
+
   return (
     <>
       <Header />
@@ -70,14 +76,17 @@ function Pedidos() {
         </section>
         <footer className="flex flex-row justify-end gap-16">
           <button
+            onClick={handleCancel}
             className="text-2xl text-green-800 font-bold w-80 h-16 
-          border-4 border-green-800 rounded-3xl disabled:border-gray-400 disabled:text-gray-400"
+          border-4 border-green-800 rounded-3xl disabled:border-gray-500 disabled:text-gray-500"
+            disabled={selectedProducts.length === 0}
           >
             Cancelar
           </button>
           <button
             className="text-2xl text-white font-bold w-80 h-16 rounded-3xl
-           bg-green-800 disabled:bg-gray-400"
+           bg-green-800 disabled:bg-gray-500"
+            disabled={selectedProducts.length === 0}
           >
             Finalizar pedido
           </button>

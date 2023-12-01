@@ -23,7 +23,7 @@ function Produtos({
               key={childIndex}
               id={childItem.name}
               className={`flex flex-col justify-center items-center w-60 h-72 
-              px-3 bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia ${
+              px-3 bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia disabled:cursor-default ${
                 foundItemId === childItem.name ? "animate-ping" : ""
               }`}
               onClick={() => onSelectProduct(childItem, 1)}
