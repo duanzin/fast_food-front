@@ -1,9 +1,17 @@
 import foodOptions from "../utils/foodOptionsArray";
-import { FoodOption } from "../utils/types";
+import { FoodOption, FoodOptionItem, SelectedProduct } from "../utils/types";
 
-function Produtos({ foundItemId }: { foundItemId: string | null }) {
+function Produtos({
+  foundItemId,
+  onSelectProduct,
+  selectedProducts,
+}: {
+  foundItemId: string | null;
+  onSelectProduct: (product: FoodOptionItem, quantity: number) => void;
+  selectedProducts: SelectedProduct[];
+}) {
   return (
-    <div className="flex flex-col gap-20">
+    <article className="flex flex-col gap-20">
       {foodOptions.map((item: FoodOption, index: number) => (
         <ul
           key={index}
@@ -11,12 +19,15 @@ function Produtos({ foundItemId }: { foundItemId: string | null }) {
           className="flex flex-row justify-between"
         >
           {item.options.map((childItem, childIndex: number) => (
-            <li
+            <button
               key={childIndex}
               id={childItem.name}
-              className={`flex flex-col justify-center items-center w-60 h-72 px-3 bg-white rounded-lg shadow-lg cursor-pointer ${
+              className={`flex flex-col justify-center items-center w-60 h-72 
+              px-3 bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia ${
                 foundItemId === childItem.name ? "animate-ping" : ""
               }`}
+              onClick={() => onSelectProduct(childItem, 1)}
+              disabled={selectedProducts.some((p) => p.name === childItem.name)}
             >
               <img
                 src={childItem.image}
@@ -28,11 +39,11 @@ function Produtos({ foundItemId }: { foundItemId: string | null }) {
               <strong className="text-lg">
                 R${childItem.price.toFixed(2).replace(".", ",")}
               </strong>
-            </li>
+            </button>
           ))}
         </ul>
       ))}
-    </div>
+    </article>
   );
 }
 
