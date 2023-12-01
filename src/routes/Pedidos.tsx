@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Categorias from "../components/Categorias";
 import Produtos from "../components/Produtos";
 import SearchBar from "../components/SearchBar";
+import Resumo from "../components/Resumo";
 import { SelectedProduct } from "../utils/types";
 import { FoodOptionItem } from "../utils/types";
 
@@ -55,25 +56,12 @@ function Pedidos() {
             selectedProducts={selectedProducts}
           />
         </section>
-        <section>
-          <ul>
-            {selectedProducts.map((product) => (
-              <li key={product.name}>
-                <span>
-                  {product.quantity}x {product.name}
-                </span>
-                <span>
-                  R$
-                  {(product.price * product.quantity)
-                    .toFixed(2)
-                    .replace(".", ",")}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <span>Total do Pedido:</span>
-          <strong>{totalAmount.toFixed(2).replace(".", ",")}</strong>
-        </section>
+        {selectedProducts.length > 0 && (
+          <Resumo
+            selectedProducts={selectedProducts}
+            totalAmount={totalAmount}
+          />
+        )}
         <footer className="flex flex-row justify-end gap-16">
           <button
             onClick={handleCancel}
