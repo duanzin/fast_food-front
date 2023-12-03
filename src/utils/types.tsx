@@ -18,3 +18,16 @@ export interface FoodOption {
 export interface SelectedProduct extends FoodOptionItem {
   quantity: number;
 }
+
+export interface OrderDetails {
+  customer: string;
+  products: {
+    name: string;
+    quantity: number;
+  }[];
+}
+
+export interface ReceivedOrder extends OrderDetails {
+  id: number;
+  status: boolean;
+}
