@@ -22,8 +22,8 @@ function OrderRender({
       {orders.map((order: ReceivedOrder) => (
         <li
           key={order.id}
-          className="flex flex-row justify-between items-center 
-            w-96 p-4 bg-white rounded-xl shadow-md"
+          className="flex flex-row justify-between items-center gap-y-5
+            w-96 p-4 bg-white rounded-xl shadow-md max-[410px]:w-72 max-[410px]:flex-col"
         >
           <ul>
             <strong className="text-lg">
@@ -38,10 +38,18 @@ function OrderRender({
             ))}
           </ul>
           <div className="flex gap-x-5">
-            <button onClick={() => handleRemoveOrder(order.id)}>Remover</button>
+            <button
+              onClick={() => handleRemoveOrder(order.id)}
+              className="bg-red-200 rounded-lg w-14 h-14 text-red-500 text-3xl"
+            >
+              &#x2717;
+            </button>
             {order.status === 0 && (
-              <button onClick={() => handleUpdateOrder(order.id)}>
-                Pronto
+              <button
+                onClick={() => handleUpdateOrder(order.id)}
+                className="bg-green-300 rounded-lg w-14 h-14 text-green-600 text-3xl"
+              >
+                &#x2713;
               </button>
             )}
           </div>
