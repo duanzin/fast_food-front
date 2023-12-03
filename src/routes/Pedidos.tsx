@@ -74,22 +74,25 @@ function Pedidos() {
       <main className="w-5/6 m-auto mb-20">
         {finishPurchase ? (
           <form onSubmit={handleFormSubmit}>
-            <h2>Pagamento</h2>
+            <h2 className="text-4xl font-bold">Pagamento</h2>
             <article>
-              <h3>Resumo da compra</h3>
+              <strong className="text-lg">Resumo da compra</strong>
               <Resumo
                 selectedProducts={selectedProducts}
                 totalAmount={totalAmount}
               />
             </article>
-            <article>
-              <label htmlFor="customer">Nome do cliente</label>
+            <article className="flex flex-col mb-20">
+              <label htmlFor="customer" className="font-bold text-lg">
+                Nome do cliente
+              </label>
               <input
                 type="text"
                 id="customer"
                 placeholder="Primeiro nome"
                 value={customer}
                 onChange={handleNameChange}
+                className="bg-gray-100 p-4 w-96 rounded-md placeholder:text-lg"
               />
             </article>
             <footer className="flex flex-row justify-end gap-16">

@@ -7,10 +7,10 @@ interface ResumoProps {
 
 function Resumo({ selectedProducts, totalAmount }: ResumoProps) {
   return (
-    <section>
-      <ul>
+    <section className="flex flex-col w-full p-9 gap-y-5 mb-20 border border-solid border-gray-400 rounded-md">
+      <ul className="pb-5 border-b-2 border-dashed border-gray-300">
         {selectedProducts.map((product) => (
-          <li key={product.name}>
+          <li key={product.name} className="flex justify-between text-2xl">
             <span>
               {product.quantity}x {product.name}
             </span>
@@ -21,8 +21,10 @@ function Resumo({ selectedProducts, totalAmount }: ResumoProps) {
           </li>
         ))}
       </ul>
-      <span>Total do Pedido:</span>
-      <strong>{totalAmount.toFixed(2).replace(".", ",")}</strong>
+      <span className="text-2xl">Total do Pedido:</span>
+      <strong className="text-4xl">
+        R$ {totalAmount.toFixed(2).replace(".", ",")}
+      </strong>
     </section>
   );
 }
