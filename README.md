@@ -1,4 +1,4 @@
-#Fast Food
+# Fast Food
 
 > a web app to order fast food notes made with react, vite and typescript
 
