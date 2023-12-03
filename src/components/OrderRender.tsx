@@ -20,30 +20,30 @@ function OrderRender({
   return (
     <ul className="flex flex-col gap-9">
       {orders.map((order: ReceivedOrder) => (
-        <li key={order.id} className="w-96 bg-white rounded-xl shadow-md">
-          <h3>
-            {order.id} - {order.customer}
-          </h3>
-          <div className="flex flex-row justify-between items-center">
-            <ul>
-              {order.products.map((product, index: number) => (
-                <li key={index}>
-                  <span>
-                    {product.quantity}x {product.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div>
-              <button onClick={() => handleRemoveOrder(order.id)}>
-                Remover
+        <li
+          key={order.id}
+          className="flex flex-row justify-between items-center 
+            w-96 p-4 bg-white rounded-xl shadow-md"
+        >
+          <ul>
+            <strong className="text-lg">
+              {order.id} - {order.customer}
+            </strong>
+            {order.products.map((product, index: number) => (
+              <li key={index}>
+                <span className="text-gray-500">
+                  {product.quantity}x {product.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-x-5">
+            <button onClick={() => handleRemoveOrder(order.id)}>Remover</button>
+            {order.status === 0 && (
+              <button onClick={() => handleUpdateOrder(order.id)}>
+                Pronto
               </button>
-              {order.status === 0 && (
-                <button onClick={() => handleUpdateOrder(order.id)}>
-                  Pronto
-                </button>
-              )}
-            </div>
+            )}
           </div>
         </li>
       ))}
