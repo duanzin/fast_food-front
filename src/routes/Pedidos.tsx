@@ -58,10 +58,10 @@ function Pedidos() {
           })),
         };
         await create(orderDetails);
+        setFinishPurchase(false);
         setSelectedProducts([]);
         setTotalAmount(0);
         setCustomer("");
-        setFinishPurchase(false);
       } catch (error) {
         console.error(error);
       }

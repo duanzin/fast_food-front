@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getMeals } from "../api/apiCalls";
 import Header from "../components/Header";
 import { ReceivedOrder } from "../utils/types";
+import OrderRender from "../components/OrderRender";
 
 function Cozinha() {
   const [orders, setOrders] = useState<ReceivedOrder[]>([]);
@@ -21,23 +22,21 @@ function Cozinha() {
   return (
     <>
       <Header />
-      <main className="w-5/6 m-auto mb-20">
-        {orders.map((order: ReceivedOrder) => (
-          <div key={order.id}>
-            <h3>
-              {order.id} - {order.customer}
-            </h3>
-            <ul>
-              {order.products.map((product, index: number) => (
-                <li key={index}>
-                  <span>
-                    {product.quantity}x {product.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <main className="flex flex-row w-5/6 m-auto mb-20">
+        <section>
+          <h2>Preparando:</h2>
+          <OrderRender
+            orders={orders.filter((order) => order.status === 0)}
+            setOrders={setOrders}
+          />
+        </section>
+        <section>
+          <h2>Pronto:</h2>
+          <OrderRender
+            orders={orders.filter((order) => order.status === 1)}
+            setOrders={setOrders}
+          />
+        </section>
       </main>
     </>
   );
