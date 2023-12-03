@@ -6,12 +6,13 @@ function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="flex flex-row justify-between items-center px-10 py-2 mb-20 bg-green-800 w-screen">
+    <header className="flex flex-row justify-between items-center px-10 py-2
+    mb-20 gap-y-3 bg-green-800 h-fit w-screen max-[450px]:flex-col max-[450px]:py-5">
       <h1 className="text-2xl text-white font-bold">fastfood</h1>
-      <nav className="flex gap-x-10">
+      <nav className="w-fit h-fit">
         <Link
           to={`/`}
-          className={`text-white font-bold rounded-lg p-3 ${
+          className={`text-white font-bold h-fit rounded-lg p-3 ${
             isActive("/") ? "bg-green-900" : ""
           }`}
         >
@@ -19,7 +20,7 @@ function Header() {
         </Link>
         <Link
           to={`/cozinha`}
-          className={`text-white font-bold rounded-lg p-3 ${
+          className={`text-white font-bold h-fit rounded-lg p-3 ${
             isActive("/cozinha") ? "bg-green-900" : ""
           }`}
         >
@@ -27,7 +28,7 @@ function Header() {
         </Link>
         <Link
           to={`/retirada`}
-          className={`text-white font-bold rounded-lg p-3 ${
+          className={`text-white font-bold h-fit rounded-lg p-3 ${
             isActive("/retirada") ? "bg-green-900" : ""
           }`}
         >

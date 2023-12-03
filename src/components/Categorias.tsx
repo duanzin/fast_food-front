@@ -13,12 +13,12 @@ function Categorias() {
   };
 
   return (
-    <ul className="flex flex-row justify-between mt-4">
+    <ul className="flex flex-row flex-wrap gap-y-4 justify-between mt-4">
       {categoryArray.map((item: categoryArrayType, index: number) => (
         <li
           key={index}
           onClick={() => handleClick(item.category)}
-          className="flex flex-col items-center w-56 h-fit py-5 bg-white rounded-lg shadow-lg cursor-pointer"
+          className="flex flex-col items-center w-56 h-fit py-5 m-auto bg-white rounded-lg shadow-lg cursor-pointer"
         >
           <img src={item.image} alt={item.category} className="w-36 h-36" />
           <strong className="text-xl">{item.category}</strong>

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-family: 'Ubuntu', sans-serif;
+}

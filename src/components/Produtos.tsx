@@ -16,14 +16,14 @@ function Produtos({
         <ul
           key={index}
           id={item.category}
-          className="flex flex-row justify-between"
+          className="flex flex-row flex-wrap gap-y-4 justify-between"
         >
           {item.options.map((childItem, childIndex: number) => (
             <button
               key={childIndex}
               id={childItem.name}
               className={`flex flex-col justify-center items-center w-60 h-72 
-              px-3 bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia disabled:cursor-default ${
+              px-3 m-auto bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia disabled:cursor-default ${
                 foundItemId === childItem.name ? "animate-ping" : ""
               }`}
               onClick={() => onSelectProduct(childItem, 1)}
