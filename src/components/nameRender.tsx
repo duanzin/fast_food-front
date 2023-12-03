@@ -6,7 +6,7 @@ function NameRender({ orders }: { orders: ReceivedOrder[] }) {
       {orders.map((order: ReceivedOrder) => (
         <li
           key={order.id}
-          className={`text-9xl font-bold ${
+          className={`text-9xl font-bold max-[450px]:text-8xl ${
             order.status === 1 ? "text-green-800" : "text-gray-500"
           }`}
         >

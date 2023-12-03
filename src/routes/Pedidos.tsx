@@ -71,7 +71,7 @@ function Pedidos() {
   return (
     <>
       <Header />
-      <main className="w-5/6 m-auto mb-20">
+      <main className="w-5/6 m-auto mb-20 max-[1200px]:w-11/12">
         {finishPurchase ? (
           <form onSubmit={handleFormSubmit}>
             <h2 className="text-4xl font-bold">Pagamento</h2>
@@ -92,21 +92,22 @@ function Pedidos() {
                 placeholder="Primeiro nome"
                 value={customer}
                 onChange={handleNameChange}
-                className="bg-gray-100 p-4 w-96 rounded-md placeholder:text-lg"
+                className="bg-gray-100 p-4 w-96 rounded-md placeholder:text-lg 
+                max-[415px]:w-full"
               />
             </article>
-            <footer className="flex flex-row justify-end gap-16">
+            <footer className="flex flex-row justify-end items-center gap-x-16 gap-y-5 max-[510px]:flex-col">
               <button
                 onClick={handleCancel}
                 className="text-2xl text-green-800 font-bold w-80 h-16 
-          border-4 border-green-800 rounded-3xl"
+          border-4 border-green-800 rounded-3xl max-[370px]:w-11/12"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
                 className="text-2xl text-white font-bold w-80 h-16 rounded-3xl
-           bg-green-800"
+           bg-green-800 max-[370px]:w-11/12"
               >
                 Finalizar pedido
               </button>
@@ -137,11 +138,12 @@ function Pedidos() {
                 totalAmount={totalAmount}
               />
             )}
-            <footer className="flex flex-row justify-end gap-16">
+            <footer className="flex flex-row items-center justify-end gap-x-16 gap-y-5 max-[510px]:flex-col">
               <button
                 onClick={handleCancel}
                 className="text-2xl text-green-800 font-bold w-80 h-16 
-          border-4 border-green-800 rounded-3xl disabled:border-gray-500 disabled:text-gray-500"
+                  border-4 border-green-800 rounded-3xl disabled:border-gray-500
+                   disabled:text-gray-500 max-[370px]:w-11/12"
                 disabled={selectedProducts.length === 0}
               >
                 Cancelar
@@ -149,7 +151,7 @@ function Pedidos() {
               <button
                 onClick={() => setFinishPurchase(true)}
                 className="text-2xl text-white font-bold w-80 h-16 rounded-3xl
-           bg-green-800 disabled:bg-gray-500"
+           bg-green-800 disabled:bg-gray-500 max-[370px]:w-11/12"
                 disabled={selectedProducts.length === 0}
               >
                 Finalizar pedido
