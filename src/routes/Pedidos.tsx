@@ -15,7 +15,8 @@ function Pedidos() {
   );
   const [totalAmount, setTotalAmount] = useState<number>(0);
   const [finishPurchase, setFinishPurchase] = useState<boolean>(false);
-  const [customer, setCustomer] = useState("");
+  const [customer, setCustomer] = useState<string>("");
+  const [observation, setObservation] = useState<string>("");
 
   const handleProductSelect = (product: FoodOptionItem, quantity: number) => {
     const existingProductIndex = selectedProducts.findIndex(
@@ -43,9 +44,16 @@ function Pedidos() {
     setCustomer(e.target.value);
   };
 
+  const handleObservationChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setObservation(e.target.value);
+  };
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const trimmedCustomer: string = customer.trim();
+    const trimmedObservation: string = observation.trim();
     if (!trimmedCustomer) {
       alert("por favor escreva seu nome");
     } else {
@@ -57,6 +65,13 @@ function Pedidos() {
             quantity: product.quantity,
           })),
         };
+        if (
+          trimmedObservation !== null &&
+          trimmedObservation !== undefined &&
+          trimmedObservation !== ""
+        ) {
+          orderDetails.observation = trimmedObservation;
+        }
         await create(orderDetails);
         setFinishPurchase(false);
         setSelectedProducts([]);
@@ -89,11 +104,26 @@ function Pedidos() {
               <input
                 type="text"
                 id="customer"
+                name="customer"
                 placeholder="Primeiro nome"
+                maxLength={20}
+                autoComplete="off"
                 value={customer}
                 onChange={handleNameChange}
                 className="bg-gray-100 p-4 w-96 rounded-md placeholder:text-lg 
-                max-[415px]:w-full"
+                max-[415px]:w-full focus:outline-none"
+              />
+              <label htmlFor="obs" className="font-bold text-lg">
+                Observações
+              </label>
+              <textarea
+                id="obs"
+                name="obs"
+                placeholder="Adicione uma observação ao pedido"
+                value={observation}
+                onChange={handleObservationChange}
+                className="bg-gray-100 p-4 h-52 w-full rounded-md placeholder:text-lg 
+                resize-none focus:outline-none"
               />
             </article>
             <footer className="flex flex-row justify-end items-center gap-x-16 gap-y-5 max-[510px]:flex-col">

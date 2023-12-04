@@ -22,21 +22,29 @@ function OrderRender({
       {orders.map((order: ReceivedOrder) => (
         <li
           key={order.id}
-          className="flex flex-row justify-between items-center gap-y-5
-            w-96 p-4 bg-white rounded-xl shadow-md max-[410px]:w-72 max-[410px]:flex-col"
+          className="flex flex-row justify-between items-center gap-5
+            w-11/12 p-4 bg-white rounded-xl shadow-md max-[410px]:flex-col"
         >
-          <ul>
-            <strong className="text-lg">
+          <div className="flex flex-col gap-y-4">
+            <strong className="text-lg break-all">
               {order.id} - {order.customer}
             </strong>
-            {order.products.map((product, index: number) => (
-              <li key={index}>
-                <span className="text-gray-500">
-                  {product.quantity}x {product.name}
-                </span>
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {order.products.map((product, index: number) => (
+                <li key={index}>
+                  <span className="text-gray-500">
+                    {product.quantity}x {product.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {order.observation && (
+              <div>
+                <strong>Observações:</strong>
+                <p className="break-all">{order.observation}</p>
+              </div>
+            )}
+          </div>
           <div className="flex gap-x-5">
             <button
               onClick={() => handleRemoveOrder(order.id)}
