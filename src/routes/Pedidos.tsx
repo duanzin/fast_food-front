@@ -122,7 +122,7 @@ function Pedidos() {
                 placeholder="Adicione uma observação ao pedido"
                 value={observation}
                 onChange={handleObservationChange}
-                className="bg-gray-100 p-4 h-auto w-full rounded-md placeholder:text-lg 
+                className="bg-gray-100 p-4 h-52 w-full rounded-md placeholder:text-lg 
                 resize-none focus:outline-none"
               />
             </article>
