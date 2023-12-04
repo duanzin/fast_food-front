@@ -21,17 +21,20 @@ To start the app, run the following command
 ```
 npm run dev
 ```
-## How to use
+
+## Using the site
 ### Pedidos route
 
-In the pedidos route there will be several options of food to choose, clicking one will add em to your order which will show up at the bottom of the page along with the food item price and the total of your purchase.
-You can click one of the categories to make the screen roll to the food type youre looking for, or search it by name. You must input the whole name for the search to work.
-Clicking the Cancelar button will remove all items from your order, While clicking the Finalizar pedido button will show your order and allow you to input your first name and any observations you want to add to your order. Clicking Finalizar pedido again will send your order to the kitchen. You must input your name or the order wont be sent.
+In the pedidos route there will be several food options, clicking them will add the to your order, which will show up at the bottom of the screen along with each individual item price and the total of your purchase.
+You can click one of the Categories buttons to automatically scroll the page to the type of food youre looking for, or search an item by name. You must input the item's full name for the search to work.
+Once you are done selecting items, you can click the Finalizar pedido button to insert your first name and any observations you may have about your order, then click the button again to send your order to the kitchen. You must input your name or it wont be sent. Alternatively, you can click the Cancelar button to remove everything from your order.
 
 ### Cozinha route
 
-In the cozinha route you will see all orders made on the pedidos page, separated by finished(pronto) and unfinished(preparando) and containing the id of the order, the name of the customer and all the items he ordered, as well as observations if there are any. By default all orders are unfinished, clicking the green button will mark them as finished, while clicking the red button will delete them.
+In the cozinha route all the orders made will be shown listing the customer's name, the order's id, all the items chosen and observations about the order, if there are any.
+The orders are separated by finished(Pronto) and unfinished(Preparando). By default all orders are unfinished, but by clicking the green button you can change an order status to finished, and by pressing the red button you can delete that order. There is no way to set a finished order back to unfinished.
 
 ### Retirada route
 
-In the retirada route you will see the names of all customers whose orders havent been deleted yet, separated by finished(pronto) and unfinished(preparando). This page has no interactivity.
+In the retirada route the names of all customers whose orders havent been deleted will be listed, divided into finished(Pronto) and unfinished(Preparando) depending on their order status.
+This page has no interactivity.
