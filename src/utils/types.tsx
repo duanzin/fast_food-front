@@ -21,6 +21,7 @@ export interface SelectedProduct extends FoodOptionItem {
 
 export interface OrderDetails {
   customer: string;
+  observation?: string;
   products: {
     name: string;
     quantity: number;

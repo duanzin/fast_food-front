@@ -26,7 +26,7 @@ function OrderRender({
             w-96 p-4 bg-white rounded-xl shadow-md max-[410px]:w-72 max-[410px]:flex-col"
         >
           <ul>
-            <strong className="text-lg">
+            <strong className="text-lg break-all">
               {order.id} - {order.customer}
             </strong>
             {order.products.map((product, index: number) => (

@@ -41,12 +41,13 @@ function SearchBar({
       <input
         type="text"
         id="searchInput"
+        name="searchInput"
         value={searchTerm}
         placeholder="O que voce procura?"
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={handleKeyPress}
         className="bg-gray-200 w-96 h-12 px-3 rounded-lg
-        placeholder:text-gray-500 max-[415px]:w-full"
+        placeholder:text-gray-500 focus:outline-none max-[415px]:w-full"
       />
     </section>
   );
