@@ -65,7 +65,11 @@ function Pedidos() {
             quantity: product.quantity,
           })),
         };
-        if (trimmedObservation !== null && trimmedObservation !== undefined) {
+        if (
+          trimmedObservation !== null &&
+          trimmedObservation !== undefined &&
+          trimmedObservation !== ""
+        ) {
           orderDetails.observation = trimmedObservation;
         }
         await create(orderDetails);
@@ -103,6 +107,7 @@ function Pedidos() {
                 name="customer"
                 placeholder="Primeiro nome"
                 maxLength={20}
+                autoComplete="off"
                 value={customer}
                 onChange={handleNameChange}
                 className="bg-gray-100 p-4 w-96 rounded-md placeholder:text-lg 

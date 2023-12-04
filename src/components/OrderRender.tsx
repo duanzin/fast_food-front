@@ -38,10 +38,12 @@ function OrderRender({
                 </li>
               ))}
             </ul>
-            <div>
-              <strong>Observações:</strong>
-              <p className="break-all">{order.observation}</p>
-            </div>
+            {order.observation && (
+              <div>
+                <strong>Observações:</strong>
+                <p className="break-all">{order.observation}</p>
+              </div>
+            )}
           </div>
           <div className="flex gap-x-5">
             <button
