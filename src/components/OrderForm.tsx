@@ -14,6 +14,7 @@ function OrderForm({
 }) {
   const [customer, setCustomer] = useState<string>("");
   const [observation, setObservation] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomer(e.target.value);
@@ -27,6 +28,11 @@ function OrderForm({
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
+
+    setIsSubmitting(true);
     const trimmedCustomer: string = customer.trim();
     const trimmedObservation: string = observation.trim();
     if (!trimmedCustomer) {
@@ -52,9 +58,12 @@ function OrderForm({
         setCustomer("");
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
+
   return (
     <form onSubmit={handleFormSubmit}>
       <h2 className="text-4xl font-bold">Pagamento</h2>

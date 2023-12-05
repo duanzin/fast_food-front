@@ -26,14 +26,14 @@ function Cozinha() {
         <section className="w-1/2 border-r-2 border-black border-solid max-[900px]:border-0 max-[900px]:w-full">
           <h2 className="text-4xl font-bold">Preparando:</h2>
           <OrderRender
-            orders={orders.filter((order) => order.status === 0)}
+            orders={orders.filter((order) => order.status === false)}
             setOrders={setOrders}
           />
         </section>
         <section className="w-1/2 pl-10 max-[900px]:p-0 max-[900px]:w-full">
           <h2 className="text-4xl font-bold">Pronto:</h2>
           <OrderRender
-            orders={orders.filter((order) => order.status === 1)}
+            orders={orders.filter((order) => order.status === true)}
             setOrders={setOrders}
           />
         </section>
