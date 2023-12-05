@@ -30,5 +30,5 @@ export interface OrderDetails {
 
 export interface ReceivedOrder extends OrderDetails {
   id: number;
-  status: number;
+  status: boolean;
 }

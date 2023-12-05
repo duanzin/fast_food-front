@@ -52,7 +52,7 @@ function OrderRender({
             >
               &#x2717;
             </button>
-            {order.status === 0 && (
+            {order.status === false && (
               <button
                 onClick={() => handleUpdateOrder(order.id)}
                 className="bg-green-300 rounded-lg w-14 h-14 text-green-600 text-3xl"
