@@ -2,6 +2,7 @@ import axios from "axios";
 import { OrderDetails } from "../utils/types";
 
 export async function getMeals() {
+  console.log(process.env.REACT_APP_API_URL);
   const res = await axios.get(`${process.env.REACT_APP_API_URL}/`);
   return res.data;
 }
