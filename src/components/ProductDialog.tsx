@@ -13,9 +13,17 @@ function ProductDialog({
   addProduct: (product: FoodOptionItem, quantity: number) => void;
 }) {
   const [quantity, setQuantity] = useState<number>(1);
+
   const handleAddToOrder = () => {
     addProduct(product, quantity);
     onClose();
+  };
+  const handleDecrease = () => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
+
+  const handleIncrease = () => {
+    setQuantity((prevQuantity) => Math.min(prevQuantity + 1, 99));
   };
 
   return (
@@ -37,14 +45,14 @@ function ProductDialog({
           <p className="text-xl">{product.description}</p>
           <div className="w-fit text-2xl border-solid border-y-2 border-green-800 rounded-full">
             <button
-              onClick={() => setQuantity(quantity - 1)}
+              onClick={handleDecrease}
               className="text-white text-center font-bold bg-green-800 rounded-full w-10 h-10"
             >
               -
             </button>
             <span className="mx-3">{quantity}</span>
             <button
-              onClick={() => setQuantity(quantity + 1)}
+              onClick={handleIncrease}
               className="text-white text-center font-bold bg-green-800 rounded-full w-10 h-10"
             >
               +
