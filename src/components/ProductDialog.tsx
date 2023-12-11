@@ -24,14 +24,14 @@ function ProductDialog({
       onClose={onClose}
       className="fixed top-1/3 p-10 bg-white rounded-xl"
     >
-      <header className="flex flex-row justify-between">
+      <header className="flex flex-row justify-between mb-7">
         <h2 className="text-4xl font-bold">Revise seu pedido!</h2>
         <button onClick={onClose} className="text-3xl text-gray-500 font-bold">
           X
         </button>
       </header>
-      <div className="flex flex-row">
-        <img src={product.image} alt={product.name} className="w-36 h-36" />
+      <div className="flex flex-row mb-7 gap-10">
+        <img src={product.image} alt={product.name} className="w-40 h-40" />
         <div>
           <strong className="text-2xl">{product.name}</strong>
           <p className="text-xl">{product.description}</p>
@@ -42,7 +42,7 @@ function ProductDialog({
             >
               -
             </button>
-            <span>{quantity}</span>
+            <span className="mx-3">{quantity}</span>
             <button
               onClick={() => setQuantity(quantity + 1)}
               className="text-white text-center font-bold bg-green-800 rounded-full w-10 h-10"
