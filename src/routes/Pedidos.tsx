@@ -29,7 +29,8 @@ function Pedidos() {
     } else {
       setSelectedProducts([...selectedProducts, { ...product, quantity }]);
     }
-    setTotalAmount(totalAmount + product.price);
+    const fullPrice: number = product.price * quantity;
+    setTotalAmount(totalAmount + fullPrice);
   };
 
   const handleCancel = () => {

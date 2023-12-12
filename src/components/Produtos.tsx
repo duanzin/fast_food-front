@@ -1,5 +1,7 @@
+import { useState } from "react";
 import foodOptions from "../utils/foodOptionsArray";
 import { FoodOption, FoodOptionItem, SelectedProduct } from "../utils/types";
+import ProductDialog from "./ProductDialog";
 
 function Produtos({
   foundItemId,
@@ -10,8 +12,31 @@ function Produtos({
   onSelectProduct: (product: FoodOptionItem, quantity: number) => void;
   selectedProducts: SelectedProduct[];
 }) {
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const [selectedProduct, setSelectedProduct] = useState<FoodOptionItem | null>(
+    null
+  );
+
+  const openDialog = (product: FoodOptionItem) => {
+    setSelectedProduct(product);
+    setDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setDialogOpen(false);
+    setSelectedProduct(null);
+  };
+
   return (
     <article className="flex flex-col gap-20">
+      {selectedProduct !== null && (
+        <ProductDialog
+          isOpen={dialogOpen}
+          onClose={closeDialog}
+          product={selectedProduct}
+          addProduct={onSelectProduct}
+        />
+      )}
       {foodOptions.map((item: FoodOption, index: number) => (
         <ul
           key={index}
@@ -26,7 +51,9 @@ function Produtos({
               px-3 m-auto bg-white rounded-lg shadow-lg cursor-pointer disabled:sepia disabled:cursor-default ${
                 foundItemId === childItem.name ? "animate-ping" : ""
               }`}
-              onClick={() => onSelectProduct(childItem, 1)}
+              onClick={() => {
+                openDialog(childItem);
+              }}
               disabled={selectedProducts.some((p) => p.name === childItem.name)}
             >
               <img
