@@ -30,7 +30,8 @@ function ProductDialog({
     <dialog
       open={isOpen}
       onClose={onClose}
-      className="fixed top-1/3 p-10 bg-white rounded-xl"
+      className="fixed top-1/3 p-10 bg-white rounded-xl border-4 border-green-800 
+      max-[524px]:w-5/6 max-[524px]:top-28"
     >
       <header className="flex flex-row justify-between mb-7">
         <h2 className="text-4xl font-bold">Revise seu pedido!</h2>
@@ -38,7 +39,7 @@ function ProductDialog({
           X
         </button>
       </header>
-      <div className="flex flex-row mb-7 gap-10">
+      <div className="flex flex-row mb-7 gap-10 max-[524px]:flex-col max-[524px]:gap-3">
         <img src={product.image} alt={product.name} className="w-40 h-40" />
         <div>
           <strong className="text-2xl">{product.name}</strong>
@@ -66,7 +67,7 @@ function ProductDialog({
       <button
         onClick={handleAddToOrder}
         className="text-2xl text-white font-bold w-80 h-16 rounded-3xl
-           bg-green-800"
+           bg-green-800 max-[490px]:w-11/12"
       >
         Adicionar ao pedido
       </button>
